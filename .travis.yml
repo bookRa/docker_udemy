@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t CRA_test -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true CRA_test npm run test
