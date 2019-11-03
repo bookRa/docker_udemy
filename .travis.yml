@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t CRA_test -f Dockerfile.dev .
+  - docker build -t cra_test -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true CRA_test npm run test
+  - docker run -e CI=true cra_test npm run test
